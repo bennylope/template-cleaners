@@ -52,5 +52,7 @@ extension as the template tag cleaning script.
 ### License
 
 I have cobbled together these scripts based on other people's helpful
-examples, so anything in here that is my original work is hereby
+examples
+\[[1](http://stackoverflow.com/questions/13590699/migrate-url-tags-to-django-1-5/13592772#13592772)\],
+so anything in here that is my original work is hereby
 **released into the public domain**.
