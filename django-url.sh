@@ -19,26 +19,6 @@ OPTIONS:
 EOF
 }
 
-DIR="."
-EXT="html"
-while getopts "hd:f:" OPTION
-do
-     case $OPTION in
-         h)
-             usage
-             exit 1
-             ;;
-         d)
-             DIR=$OPTARG
-             ;;
-         f)
-             EXT=$OPTARG
-             ;;
-         ?)
-             usage
-             exit 1
-             ;;
-     esac
-done
+. opts.sh
 
 find $DIR -type f -name "*.$EXT" -print0 | xargs -0 sed -i -r -e "s#\{% url ([a-zA-Z0-9_.:-]+)#\{% url '\1'#g"
