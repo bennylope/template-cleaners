@@ -50,7 +50,11 @@ You can pass the `e` flag to edit the problems in place.
 When editing no attempt is made to control the exit code based on
 matches.
 
-### Upgrade old `url` template tags
+### Upgrade old Django `url` template tags
+
+> Changed in Django 1.5: The first parameter used not to be quoted, which was inconsistent with other template tags. Since Django 1.5, it is evaluated according to the usual rules: it can be a quoted string or a variable that will be looked up in the context.
+
+From the [Django docs](https://docs.djangoproject.com/en/1.5/ref/templates/builtins/#std:templatetag-url)
 
 This script just adds single quotation marks around the URL name in each
 instance of a `url` tag in your templates.
