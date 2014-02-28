@@ -52,7 +52,7 @@ if [ $EDIT -eq 1 ]
 then
   find $DIR -type f -name "*.$EXT" -print0 | xargs -0 sed -i -r -e "s#\{% url ([a-zA-Z0-9_.:-]+)#\{% url '\1'#g"
 else
-  grep -r --include="*.$EXT" "\{% url [^']" $DIR
+  grep -rn --include="*.$EXT" "\{% url [^']" $DIR
   RETVAL=$?
   if [ $RETVAL -eq 1 ]
   then

@@ -49,7 +49,7 @@ if [ $EDIT -eq 1 ]
 then
   find $DIR -type f -name "*.$EXT" -print0 | xargs -0 sed -i -r -e "s#\{%([a-zA-Z0-9_.:-]+)#\{% \1#g;s#([a-zA-Z0-9_.:-]+)%\}#\1 %\}#g;s#\{\{([a-zA-Z0-9_.:-]+)#\{\{ \1#g;s#([a-zA-Z0-9_.:-]+)\}\}#\1 \}\}#g" 
 else
-  grep -r --include="*.$EXT" "\{%\S\|\S%\}\|\{{\S\|\S\}}" $DIR
+  grep -rn --include="*.$EXT" "\{%\S\|\S%\}\|\{{\S\|\S\}}" $DIR
   RETVAL=$?
   if [ $RETVAL -eq 1 ]
   then
